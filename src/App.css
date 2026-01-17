@@ -25,10 +25,59 @@ html, body, #root {
   color: red;
   white-space: nowrap;
   position: absolute;
-  animation: scroll-left 8s linear infinite;
 }
 
-@keyframes scroll-left {
+.scroll-1 {
+  top: 10%;
+  animation: scroll-left-fast 6s linear infinite;
+}
+
+.scroll-2 {
+  top: 25%;
+  animation: scroll-left-slow 12s linear infinite;
+  font-size: 3rem;
+  color: #ff6666;
+}
+
+.scroll-3 {
+  top: 45%;
+  animation: scroll-left-medium 8s linear infinite;
+  font-size: 5rem;
+}
+
+.scroll-4 {
+  top: 65%;
+  animation: scroll-left-fast 7s linear infinite;
+  font-size: 3.5rem;
+  color: #ff3333;
+}
+
+.scroll-5 {
+  top: 80%;
+  animation: scroll-left-slow 10s linear infinite;
+  font-size: 4.5rem;
+  color: #ff9999;
+}
+
+@keyframes scroll-left-fast {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-left-medium {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-left-slow {
   0% {
     transform: translateX(100vw);
   }
