@@ -12,7 +12,9 @@ html, body, #root {
 .app {
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background: linear-gradient(45deg, #ff0000, #ff8800, #ffff00, #00ff00, #0088ff, #8800ff, #ff0088);
+  background-size: 400% 400%;
+  animation: rainbow-bg 3s ease infinite;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,66 +24,97 @@ html, body, #root {
 .scrolling-text {
   font-size: 4rem;
   font-weight: bold;
-  color: red;
   white-space: nowrap;
   position: absolute;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
 .scroll-1 {
   top: 10%;
-  animation: scroll-left-fast 6s linear infinite;
+  animation: scroll-left-fast 6s linear infinite, color-change-1 2s ease infinite;
 }
 
 .scroll-2 {
   top: 25%;
-  animation: scroll-left-slow 12s linear infinite;
+  animation: scroll-left-slow 12s linear infinite, color-change-2 2.5s ease infinite;
   font-size: 3rem;
-  color: #ff6666;
 }
 
 .scroll-3 {
   top: 45%;
-  animation: scroll-left-medium 8s linear infinite;
+  animation: scroll-left-medium 8s linear infinite, color-change-3 1.8s ease infinite;
   font-size: 5rem;
 }
 
 .scroll-4 {
   top: 65%;
-  animation: scroll-left-fast 7s linear infinite;
+  animation: scroll-left-fast 7s linear infinite, color-change-4 2.2s ease infinite;
   font-size: 3.5rem;
-  color: #ff3333;
 }
 
 .scroll-5 {
   top: 80%;
-  animation: scroll-left-slow 10s linear infinite;
+  animation: scroll-left-slow 10s linear infinite, color-change-5 1.5s ease infinite;
   font-size: 4.5rem;
-  color: #ff9999;
+}
+
+@keyframes rainbow-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes scroll-left-fast {
-  0% {
-    transform: translateX(100vw);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
 }
 
 @keyframes scroll-left-medium {
-  0% {
-    transform: translateX(100vw);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
 }
 
 @keyframes scroll-left-slow {
-  0% {
-    transform: translateX(100vw);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes color-change-1 {
+  0% { color: #ff0000; }
+  25% { color: #00ff00; }
+  50% { color: #0000ff; }
+  75% { color: #ffff00; }
+  100% { color: #ff0000; }
+}
+
+@keyframes color-change-2 {
+  0% { color: #ff8800; }
+  25% { color: #8800ff; }
+  50% { color: #00ff88; }
+  75% { color: #ff0088; }
+  100% { color: #ff8800; }
+}
+
+@keyframes color-change-3 {
+  0% { color: #ffff00; }
+  25% { color: #ff0088; }
+  50% { color: #88ff00; }
+  75% { color: #0088ff; }
+  100% { color: #ffff00; }
+}
+
+@keyframes color-change-4 {
+  0% { color: #00ff00; }
+  25% { color: #ff0000; }
+  50% { color: #8800ff; }
+  75% { color: #ff8800; }
+  100% { color: #00ff00; }
+}
+
+@keyframes color-change-5 {
+  0% { color: #0000ff; }
+  25% { color: #ffff00; }
+  50% { color: #ff0000; }
+  75% { color: #00ff88; }
+  100% { color: #0000ff; }
 }
